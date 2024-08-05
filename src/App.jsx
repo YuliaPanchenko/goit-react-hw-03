@@ -8,10 +8,11 @@ import contactListData from "../src/data/contactList.json";
 function App() {
   const [contacts, setContacts] = useState(() => {
     const storedContacts = window.localStorage.getItem("contactValue");
+    // return storedContacts ? JSON.parse(storedContacts) : contactListData;
     if (storedContacts) {
       return JSON.parse(storedContacts);
     } else {
-      contactListData;
+      return contactListData;
     }
   });
   const [filterValue, setFilterValue] = useState("");
